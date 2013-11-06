@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using FuncWorks.XNA.XTiled;
 using Diplodocus.Carte;
+using Diplodocus.Camera;
 
 
 namespace Diplodocus
@@ -23,7 +24,10 @@ namespace Diplodocus
         SpriteBatch spriteBatch;
         Map carte;
         ChargeurCarte chargeurCarte;
-
+        Rectangle point = new Rectangle(10, 10, 5, 5);
+        Rectangle positionAvant; 
+        Texture2D f;
+        Camera2D camera = new Camera2D();
         public Diplodocus()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -56,6 +60,7 @@ namespace Diplodocus
 
             // TODO: use this.Content to load your game content here
             carte = chargeurCarte.ChargerNiveauSuivant();
+            f = Content.Load<Texture2D>(@"df");
         }
 
         /// <summary>
@@ -75,11 +80,21 @@ namespace Diplodocus
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
+            positionAvant  = point;
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
+            if (Keyboard.GetState().IsKeyDown(Keys.D))
+                point.Offset(5,0);
+            if (Keyboard.GetState().IsKeyDown(Keys.A))
+                point.Offset(-5, 0);
+            if (Keyboard.GetState().IsKeyDown(Keys.W))
+                point.Offset(0, -5);
+            if (Keyboard.GetState().IsKeyDown(Keys.S))
+                point.Offset(0, 5);
 
             // TODO: Add your update logic here
-
+            point = CollisionCarte.PositionApresCollisions(carte, 0, point, positionAvant);
+            camera.Suivre(point, positionAvant, carte, GraphicsDevice.Viewport.Bounds);
             base.Update(gameTime);
         }
 
@@ -92,8 +107,9 @@ namespace Diplodocus
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            spriteBatch.Begin();
-            carte.Draw(spriteBatch, GraphicsDevice.Viewport.Bounds);
+            spriteBatch.Begin(SpriteSortMode.BackToFront, null, null, null, null, null, camera.MatriceDeLaCamera);
+            carte.Draw(spriteBatch, carte.Bounds);
+            spriteBatch.Draw(f, point, Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }

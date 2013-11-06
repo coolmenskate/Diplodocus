@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="30" height="20" tilewidth="32" tileheight="32">
+<map version="1.0" orientation="orthogonal" width="60" height="20" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="grass-tiles-2-small" tilewidth="32" tileheight="32">
   <image source="grass-tiles-2-small.png" width="384" height="192"/>
  </tileset>
- <layer name="Calque de Tile 1" width="30" height="20">
+ <layer name="Calque de Tile 1" width="60" height="20">
   <data encoding="base64" compression="zlib">
-   eJztlcEKwCAMQ6vsOv//c4eMsCJNlWm3i4FcVPqKqSjyKBFniRHqn8QRPWheIWesHmb5jInabX3Nn2GDybhF7LzzQnZbD0wv6zTB1WzNxzr2Wv6qGdPsYqxbeUfLm/cqnRFzhHBHX3O3+vIyGXGdp+MFl/0Ho8Y8bf33pvZbvnUBJAIDvg==
+   eJztl8EKhSAQRadom/va1/9/Yri4vGlwZDSfWXngbiLEw3WMiH4MSkZ6F/CalbzJnXs65Z2Q+1O9NVc4SS/uXcN5MWRNWA+umq+j8DyPVMd5M2RPXBPO0gOusVkeLtnEsXSb07GH98zPMT/v0ruFbnM79nBnF3gemud/g+5WOncpU5rY/e3hs6AlB3S307lLmdrgTJT0TZnf5dr2myBlfreb9thpj9jMWeLvqan6rvPR/hOswT3V+R4lv8VP4Gu+nXs5ADBlDng=
   </data>
  </layer>
- <objectgroup name="SurfaceContact" width="30" height="20">
-  <object x="33" y="416" width="574" height="65"/>
-  <object x="576" y="255" width="285" height="64"/>
-  <object x="766" y="513" width="193" height="62"/>
+ <objectgroup name="SurfaceContact" width="60" height="20">
+  <object x="32" y="416" width="576" height="64"/>
+  <object x="576" y="256" width="288" height="64"/>
+  <object x="768" y="512" width="192" height="64"/>
  </objectgroup>
 </map>
