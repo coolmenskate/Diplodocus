@@ -110,6 +110,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Camera\Camera.cs" />
     <Compile Include="Carte\ChargeurCarte.cs" />
     <Compile Include="Carte\CollisionCarte.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
