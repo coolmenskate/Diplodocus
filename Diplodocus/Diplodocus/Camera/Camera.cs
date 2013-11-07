@@ -22,7 +22,6 @@ namespace Diplodocus.Camera
                 MatriceDeLaCamera *= Matrix.CreateTranslation(new Vector3(-(positionActuelle.X - positionPrecedente.X), 0, 0));
             if (positionActuelle.Center.Y + tailleEcran.Height / 2.0f <= carte.Bounds.Bottom && positionActuelle.Center.Y - tailleEcran.Height / 2.0f >= 0)
                 MatriceDeLaCamera *= Matrix.CreateTranslation(new Vector3(0, -(positionActuelle.Y - positionPrecedente.Y), 0));
-            
         }
     }
 }

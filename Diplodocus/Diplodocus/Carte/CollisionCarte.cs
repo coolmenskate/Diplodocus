@@ -107,9 +107,15 @@ namespace Diplodocus.Carte
             Rectangle detection = new Rectangle(position.X, position.Y, position.Width, position.Height + 1);
             List<MapObject> objetsDessous = carte.GetObjectsInRegion(calquePlateforme, detection).ToList<MapObject>();
             if (objetsDessous.Count == 0)
+            {
+                Console.WriteLine(@"Vol");
                 return false;
+            }
             else
+            {
+                Console.WriteLine(@"plancher");
                 return true;
+            }
         }
 
         /// <summary>
