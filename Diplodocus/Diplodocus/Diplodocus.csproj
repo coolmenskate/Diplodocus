@@ -116,6 +116,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Diplodocus.cs" />
+    <Compile Include="Acteurs\Detective.cs" />
+    <Compile Include="Textures\IActeurSaute.cs" />
+    <Compile Include="Textures\ISpriteSheet.cs" />
+    <Compile Include="Textures\SpriteDetective.cs" />
+    <Compile Include="Textures\TextureDetective.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="80" height="40" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Fond" tilewidth="32" tileheight="32">
+  <image source="../../SpriteSheets/RockCastle.png" width="320" height="192"/>
+ </tileset>
+ <tileset firstgid="61" name="Bloc" tilewidth="32" tileheight="32">
+  <image source="../../SpriteSheets/Bricks.png" width="192" height="192"/>
+ </tileset>
+ <tileset firstgid="97" name="Alien" tilewidth="32" tileheight="32">
+  <image source="../../SpriteSheets/AlienCastle.png" width="320" height="192"/>
+ </tileset>
+ <layer name="Calque 2" width="80" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzt16dShUEQhNH/kgzREA3REM0lvQ7REA3REA3REB+X7wXYWrU9XbXimK6psV3dapqmA53oQjd60Kp5Vt6LPvRjAIMYqnl2PowRjGIM45ioeXY+iSlMYwazmKt5dj6PBSxiCctYqXl23sYq1rCODWzWPDtX95d7ru4v91zdX+65ur/cc3V/uefq/nLP/+uXLWxjB7vYw37i3uVPqf49wCGOcIwTnCbuXf6U6t8znOMCl7jCdeLe5U+p/r3BLe5wjwc8Ju5d/pTq3yc84wWveMN74t7lT6n+/cAnvvCNH/wm7l3+1P0bK1f3l3uu7i/3XN1f7rm6v9xzdX+55y67Neofl90a9Y/Lbo36x2W3Rv3jsluj/nHZrVH/qPeje67ej+65ej+65+r96J6r96N7rt6P7rnb3oz2x21vRvvjtjej/XHbm9H+/AH1muEw
+  </data>
+ </layer>
+ <layer name="Bloc" width="80" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztmdkOgyAQRfkx21rtYrd0Sbr8/4/0vpgYDIFBRAbmJOcBtC0ZuUCjUoIgCEIoKriCa7iBNdw69Juul4apDq713ME9PMBjzIEnQgNbNa6D3jbdd4YXeIU3x9/Mae528KTGddDbpvt8MD0LwY2QzyJ3csrqEkhWp5FqVn3PbXPmiFNWTbmg9scYU4qYckHtjzGmlLBlJGaGOOW1x5aRmBnilNceW0ZiZohDXlOhUsvu7dxp1LJ7O3c6tezeLgiCQOXk6XAtK5m7pw/4hK/4Q06Kt6cf+IU/y/dXRLmeE/Vx11pbv06hJTo8JwqCMD+c167YmGpV2to1ZU/Ua1Xq/Au5J5Y2/wS+lJr3kEje88L3vyblvYXL57jSEO3zQ3lvoffllME/RI6IeQ==
+  </data>
+ </layer>
+ <objectgroup name="Collision" width="80" height="40">
+  <object x="0" y="1216" width="1056" height="64"/>
+  <object x="384" y="1024" width="800" height="32"/>
+  <object x="416" y="768" width="544" height="96"/>
+  <object x="992" y="960" width="160" height="96"/>
+  <object x="832" y="992" width="160" height="64"/>
+  <object x="416" y="1024" width="416" height="64"/>
+  <object x="1056" y="1216" width="32" height="32"/>
+  <object x="1024" y="1056" width="128" height="32"/>
+  <object x="480" y="864" width="384" height="32"/>
+  <object x="1152" y="960" width="32" height="32"/>
+  <object x="1184" y="832" width="544" height="32"/>
+  <object x="1216" y="864" width="480" height="32"/>
+  <object x="1376" y="1120" width="192" height="32"/>
+  <object x="1408" y="1152" width="128" height="32"/>
+  <object x="96" y="384" width="576" height="96"/>
+  <object x="32" y="480" width="192" height="96"/>
+  <object x="288" y="480" width="192" height="96"/>
+  <object x="672" y="128" width="512" height="128"/>
+  <object x="1184" y="128" width="128" height="96"/>
+ </objectgroup>
+</map>

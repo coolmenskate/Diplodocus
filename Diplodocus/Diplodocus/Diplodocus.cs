@@ -11,6 +11,8 @@ using Microsoft.Xna.Framework.Media;
 using FuncWorks.XNA.XTiled;
 using Diplodocus.Carte;
 using Diplodocus.Camera;
+using Diplodocus.Acteurs;
+using Diplodocus.Textures;
 
 
 namespace Diplodocus
@@ -24,10 +26,11 @@ namespace Diplodocus
         SpriteBatch spriteBatch;
         Map carte;
         ChargeurCarte chargeurCarte;
-        Rectangle point = new Rectangle(10, 10, 5, 5);
-        Rectangle positionAvant; 
+        Detective s;
         Texture2D f;
         Camera2D camera = new Camera2D();
+        TextureDetective texture;
+
         public Diplodocus()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -59,8 +62,9 @@ namespace Diplodocus
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            carte = chargeurCarte.ChargerNiveauSuivant();
+            carte = chargeurCarte.ChargerNiveauPrecis(2);
             f = Content.Load<Texture2D>(@"df");
+            s = new Detective(new TextureDetective(Content.Load<Texture2D>(@"SpriteSheets\Detective_SpriteSheet")), new Vector2(10, 10));
         }
 
         /// <summary>
@@ -80,21 +84,16 @@ namespace Diplodocus
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
-            positionAvant  = point;
-            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
-                this.Exit();
-            if (Keyboard.GetState().IsKeyDown(Keys.D))
-                point.Offset(5,0);
-            if (Keyboard.GetState().IsKeyDown(Keys.A))
-                point.Offset(-5, 0);
-            if (Keyboard.GetState().IsKeyDown(Keys.W))
-                point.Offset(0, -5);
-            if (Keyboard.GetState().IsKeyDown(Keys.S))
-                point.Offset(0, 5);
-
+            s.Update(gameTime);
             // TODO: Add your update logic here
-            point = CollisionCarte.PositionApresCollisions(carte, 0, point, positionAvant);
-            camera.Suivre(point, positionAvant, carte, GraphicsDevice.Viewport.Bounds);
+            s.PositionActuelle = CollisionCarte.PositionApresCollisions(carte, 0, s.PositionActuelle, s.PositionPrecedente);
+            if (CollisionCarte.contactAvecLeSol(carte, 0, s.PositionActuelle) == true)
+                s.ToucheAuSol = true;
+            else if (s.ToucheAuSol == true)
+                s.ToucheAuSol = false;
+            if (CollisionCarte.contactAuDessus(carte, 0, s.PositionActuelle) && s.vitesse.Y < 0)
+                s.ChuteLibre = true;
+            camera.Suivre(s.PositionActuelle, s.PositionPrecedente, carte, GraphicsDevice.Viewport.Bounds);
             base.Update(gameTime);
         }
 
@@ -108,8 +107,9 @@ namespace Diplodocus
 
             // TODO: Add your drawing code here
             spriteBatch.Begin(SpriteSortMode.BackToFront, null, null, null, null, null, camera.MatriceDeLaCamera);
-            carte.Draw(spriteBatch, carte.Bounds);
-            spriteBatch.Draw(f, point, Color.White);
+            s.Draw(gameTime, spriteBatch);
+            carte.DrawLayer(spriteBatch, 0, carte.Bounds, 1);
+            carte.DrawLayer(spriteBatch, 1, carte.Bounds, 0.5f);
             spriteBatch.End();
             base.Draw(gameTime);
         }
