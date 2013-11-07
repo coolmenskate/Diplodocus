@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors" xmlns:Framework="Microsoft.Xna.Framework">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Carte\Niveau1\Niveau1.tmx</Source>
+      <Name>Carte\Niveau1\Niveau1</Name>
+      <Importer>TMXContentImporter</Importer>
+      <Processor>TMXContentProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Utilisateur\Documents\Diplodocus\Diplodocus\Diplodocus\bin\x86\Debug\Content\Carte\Niveau1\Niveau1.xnb</Output>
+      <Time>2013-11-06T21:18:21.9462889-05:00</Time>
+      <Request>C:\Users\Utilisateur\Documents\Diplodocus\Diplodocus\Diplodocus\bin\x86\Debug\Content\Carte\Niveau1\Niveau1\00.xnb</Request>
+    </Item>
+    <Item>
+      <Source>df.png</Source>
+      <Name>df</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Utilisateur\Documents\Diplodocus\Diplodocus\Diplodocus\bin\x86\Debug\Content\df.xnb</Output>
+      <Time>2013-11-06T21:18:21.9512892-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Carte\Niveau1\grass-tiles-2-small.png</Source>
+      <Name>Carte\Niveau1\Niveau1\00</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="GenerateMipmaps" Type="bool">false</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">Color</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">false</Data>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Utilisateur\Documents\Diplodocus\Diplodocus\Diplodocus\bin\x86\Debug\Content\Carte\Niveau1\Niveau1\00.xnb</Output>
+      <Time>2013-11-06T20:42:27.9000845-05:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\Utilisateur\Documents\Diplodocus\Diplodocus\DiplodocusContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Utilisateur\Documents\Diplodocus\Diplodocus\Diplodocus\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Utilisateur\Documents\Diplodocus\Diplodocus\DiplodocusContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Utilisateur\Documents\Diplodocus\Diplodocus\Diplodocus\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Users\Utilisateur\Documents\Diplodocus\XTiled\FuncWorks.XNA.XTiledExtensions.dll</Key>
+        <Value>2013-11-06T21:18:21.9642899-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2013-10-02T11:58:26.9359147-04:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

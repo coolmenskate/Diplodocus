@@ -28,6 +28,7 @@ namespace Diplodocus
         Rectangle positionAvant; 
         Texture2D f;
         Camera2D camera = new Camera2D();
+
         public Diplodocus()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -47,6 +48,7 @@ namespace Diplodocus
             // TODO: Add your initialization logic here
 
             base.Initialize();
+            IsMouseVisible = true;
         }
 
         /// <summary>
