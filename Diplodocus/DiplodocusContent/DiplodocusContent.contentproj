@@ -53,13 +53,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="df.png">
-      <Name>df</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="SpriteSheets\AlienCastle.png">
       <Name>AlienCastle</Name>
       <Importer>TextureImporter</Importer>
@@ -103,6 +96,20 @@
       <Name>Niveau2</Name>
       <Importer>TMXContentImporter</Importer>
       <Processor>TMXContentProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Diplodocus.Data\Diplodocus.Data.csproj">
+      <Project>{8649C6EA-5885-4286-AEA9-A6052EAFA5DD}</Project>
+      <Name>Diplodocus.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SpriteSheets\Detective_SpriteSheetXML.xml">
+      <Name>Detective_SpriteSheetXML</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <SubType>Designer</SubType>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
