@@ -1,0 +1,25 @@
+﻿<Window x:Class="Diplodocus.SpritesheetToXML.Type"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Choose the type of animation" Height="150" Width="300">
+    <StackPanel>
+        <Label Content="Animation Type" HorizontalAlignment="Center" Margin="10"/>
+        <ComboBox Name="selectionItem" Margin="10" SelectionChanged="selectionItem_SelectionChanged">
+            <Label Name="left" Content="Left"/>
+            <Label Name="right" Content="Right"/>
+            <Label Name="up" Content="Up"/>
+            <Label Name="down" Content="Down"/>
+            <Label Name="jump" Content="Jump"/>
+            <Label Name="crunch" Content="Crunch"/>
+            <Label Name="shoot" Content="Shoot"/>
+            <Label Name="backflip" Content="Backflip"/>
+            <Label Name="teleportation" Content="Teleportation"/>
+            <Label Name="runLeft" Content="Run to the left"/>
+            <Label Name="runright" Content="Run to the right"/>
+            <Label Name="runUp" Content="Run up"/>
+            <Label Name="runDown" Content="Run down"/>
+            <Label Name="death" Content="Death"/>
+            <Label Name="waiting" Content="Waiting"/>
+        </ComboBox>
+    </StackPanel>
+</Window>

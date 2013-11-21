@@ -12,7 +12,7 @@ using FuncWorks.XNA.XTiled;
 using Diplodocus.Carte;
 using Diplodocus.Camera;
 using Diplodocus.Acteurs;
-using Diplodocus.Textures;
+using Diplodocus.Physics;
 
 
 namespace Diplodocus
@@ -26,10 +26,9 @@ namespace Diplodocus
         SpriteBatch spriteBatch;
         Map carte;
         ChargeurCarte chargeurCarte;
-        Detective s;
-        Texture2D f;
         Camera2D camera = new Camera2D();
-        TextureDetective texture;
+        Player player;
+        List<MovingActorWithSpeed> ennemies = new List<MovingActorWithSpeed>();
 
         public Diplodocus()
         {
@@ -60,11 +59,15 @@ namespace Diplodocus
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            player = new Player(Content, @"SpriteSheets\Detective_SpriteSheetXML");
             // TODO: use this.Content to load your game content here
             carte = chargeurCarte.ChargerNiveauPrecis(2);
-            f = Content.Load<Texture2D>(@"df");
-            s = new Detective(new TextureDetective(Content.Load<Texture2D>(@"SpriteSheets\Detective_SpriteSheet")), new Vector2(10, 10));
+            foreach (MapObject spawPoint in carte.GetObjectsInRegion(1, carte.Bounds))
+            {
+                ennemies.Add(new MovingActorWithSpeed(Content, @"SpriteSheets\Detective_SpriteSheetXML"));
+                ennemies[ennemies.Count - 1].Position = spawPoint.Bounds;
+                ennemies[ennemies.Count - 1].Speed = new Vector2(5, 0);
+            }
         }
 
         /// <summary>
@@ -84,16 +87,19 @@ namespace Diplodocus
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
-            s.Update(gameTime);
-            // TODO: Add your update logic here
-            s.PositionActuelle = CollisionCarte.PositionApresCollisions(carte, 0, s.PositionActuelle, s.PositionPrecedente);
-            if (CollisionCarte.contactAvecLeSol(carte, 0, s.PositionActuelle) == true)
-                s.ToucheAuSol = true;
-            else if (s.ToucheAuSol == true)
-                s.ToucheAuSol = false;
-            if (CollisionCarte.contactAuDessus(carte, 0, s.PositionActuelle) && s.vitesse.Y < 0)
-                s.ChuteLibre = true;
-            camera.Suivre(s.PositionActuelle, s.PositionPrecedente, carte, GraphicsDevice.Viewport.Bounds);
+            player.Update(gameTime);
+            player.Position = CollisionCarte.PositionApresCollisions(carte, 0, player.Position, player.PreviousPosition);
+            if (CollisionCarte.contactAvecLeSol(carte, 0, player.Position) == false)
+            {
+                player.Speed = DiplodocusPhysics.GetSpeedWithGravity(player.Speed, (float)gameTime.ElapsedGameTime.TotalSeconds);
+                if (player.IsInTheAir == false)
+                    player.IsInTheAir = true;
+            }
+            else if (player.IsInTheAir == true)
+                player.IsInTheAir = false;
+            if (CollisionCarte.contactAuDessus(carte, 0, player.Position) == true && player.Speed.Y < 0)
+                player.Speed = new Vector2(player.Speed.X, 0);
+            camera.Suivre(player.Position, player.PreviousPosition, carte, GraphicsDevice.Viewport.Bounds);
             base.Update(gameTime);
         }
 
@@ -107,9 +113,11 @@ namespace Diplodocus
 
             // TODO: Add your drawing code here
             spriteBatch.Begin(SpriteSortMode.BackToFront, null, null, null, null, null, camera.MatriceDeLaCamera);
-            s.Draw(gameTime, spriteBatch);
+            player.Draw(spriteBatch);
             carte.DrawLayer(spriteBatch, 0, carte.Bounds, 1);
             carte.DrawLayer(spriteBatch, 1, carte.Bounds, 0.5f);
+            foreach (MovingActorWithSpeed ennemy in ennemies)
+                ennemy.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
         }

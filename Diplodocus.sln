@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diplodocus", "Diplodocus\Diplodocus\Diplodocus.csproj", "{0EA15161-04EB-4105-BB37-B5E719FE6452}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "DiplodocusContent", "Diplodocus\DiplodocusContent\DiplodocusContent.contentproj", "{2361A957-61DD-4EAF-A221-1D948C7726B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiplodocusContent", "Diplodocus\DiplodocusContent\DiplodocusContent.contentproj", "{2361A957-61DD-4EAF-A221-1D948C7726B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diplodocus.Data", "Diplodocus.Data\Diplodocus.Data.csproj", "{8649C6EA-5885-4286-AEA9-A6052EAFA5DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diplodocus.SpritesheetToXML", "Diplodocus.SpritesheetToXML\Diplodocus.SpritesheetToXML.csproj", "{B14C9353-8A7D-4474-A484-119315EECD38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +21,14 @@ Global
 		{0EA15161-04EB-4105-BB37-B5E719FE6452}.Release|x86.Build.0 = Release|x86
 		{2361A957-61DD-4EAF-A221-1D948C7726B0}.Debug|x86.ActiveCfg = Debug|x86
 		{2361A957-61DD-4EAF-A221-1D948C7726B0}.Release|x86.ActiveCfg = Release|x86
+		{8649C6EA-5885-4286-AEA9-A6052EAFA5DD}.Debug|x86.ActiveCfg = Debug|x86
+		{8649C6EA-5885-4286-AEA9-A6052EAFA5DD}.Debug|x86.Build.0 = Debug|x86
+		{8649C6EA-5885-4286-AEA9-A6052EAFA5DD}.Release|x86.ActiveCfg = Release|x86
+		{8649C6EA-5885-4286-AEA9-A6052EAFA5DD}.Release|x86.Build.0 = Release|x86
+		{B14C9353-8A7D-4474-A484-119315EECD38}.Debug|x86.ActiveCfg = Debug|x86
+		{B14C9353-8A7D-4474-A484-119315EECD38}.Debug|x86.Build.0 = Debug|x86
+		{B14C9353-8A7D-4474-A484-119315EECD38}.Release|x86.ActiveCfg = Release|x86
+		{B14C9353-8A7D-4474-A484-119315EECD38}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
